@@ -1,0 +1,12 @@
+<?php
+require 'koneksi.php';
+require 'layout/layoutHeader.php';
+
+$page = $_GET['page'] ?? 'home';
+$allowed = ['home', 'components/all-produk'];              // tambah nama halaman lain di sini
+if (!in_array($page, $allowed)) {
+    $page = 'home';
+}
+include "$page.php";
+
+require 'layout/layoutFooter.php';
