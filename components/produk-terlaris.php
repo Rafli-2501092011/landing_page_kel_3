@@ -9,10 +9,10 @@ $hasil = mysqli_stmt_get_result($stmt);
   <div class="container-lg">
 
     <div class="section-header d-flex flex-wrap justify-content-between my-4">
-      <h2 class="section-title">Produk Favorite</h2>
+      <h2 class="section-title">Produk Terlaris</h2>
 
       <div class="d-flex align-items-center">
-        <a href="#all-produk" class="btn btn-primary me-2">View All</a>
+        <a href="#all-produk" class="btn btn-primary me-2">Lihat Semua</a>
       </div>
     </div>
 

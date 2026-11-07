@@ -1,44 +1,46 @@
-    <section class="py-3">
-      <div class="container-lg">
-        <div class="row">
-          <div class="col-md-12">
+<section id="informasi-toko" class="pb-4 my-4">
+  <div class="container-lg">
+    <div class="pt-5 pb-5 px-4 rounded-5 shadow-sm" style="background-color: #FFF1D6;">
+      <div class="container">
+        <div class="row align-items-center justify-content-between g-4">
 
-            <div class="banner-blocks">
-            
-              <div class="banner-ad d-flex align-items-center large bg-info block-1" style="background: url('gambar/banner-ad-1.jpg') no-repeat; background-size: cover;">
-                <div class="banner-content p-5">
-                  <div class="content-wrapper text-light">
-                    <h3 class="banner-title text-light">Etalase Digital Toko</h3>
-                    <p>Pusat informasi daftar barang dan profil toko secara online.</p>
-                    <a href="#all-produk" class="btn-link text-white">LIHAT KATALOG</a>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="banner-ad bg-success-subtle block-2" style="background:url('gambar/banner-ad-2.jpg') no-repeat;background-size: cover">
-                <div class="banner-content align-items-center p-5">
-                  <div class="content-wrapper text-light">
-                    <h3 class="banner-title text-light">Informasi Toko</h3>
-                    <p>Kenali profil dan informasi lengkap toko kami di sini.</p>
-                    <a href="#" class="btn-link text-white">TENTANG KAMI</a>
-                  </div>
-                </div>
-              </div>
+          <div class="col-lg-6">
+            <span class="badge bg-warning text-dark mb-2 px-3 py-2 rounded-pill fw-semibold">Tentang Kami</span>
+            <h2 class="fw-bold mb-3" style="color: #333;">Kayla Aletha Mart</h2>
+            <p class="text-secondary lh-lg mb-4">
+              Kayla Aletha Mart adalah minimarket modern yang hadir untuk memenuhi seluruh kebutuhan harian Anda dan
+              keluarga.
+              Kami menyediakan beragam produk segar, makanan, minuman, hingga perlengkapan rumah tangga dengan harga
+              terjangkau,
+              tempat yang bersih, dan pelayanan yang ramah. Belanja cepat, nyaman, dan hemat kini semakin mudah di Kayla
+              Aletha Mart.
+            </p>
 
-              <div class="banner-ad bg-danger block-3" style="background:url('gambar/banner-ad-3.jpg') no-repeat;background-size: cover">
-                <div class="banner-content align-items-center p-5">
-                  <div class="content-wrapper text-light">
-                    <h3 class="banner-title text-light">Produk Berkualitas (atau Pilihan Terbaik)</h3>
-                    <p>Berbagai pilihan barang terbaik yang siap Anda cek kapan saja.</p>
-                    <a href="#produk-terlaris" class="btn-link text-white">LIHAT PRODUK</a>
-                  </div>
-                </div>
+            <div class="d-flex gap-3 align-items-center">
+              <a href="#all-produk" class="btn btn-dark rounded-pill px-4 py-2">Lihat Produk</a>
+              <div class="text-muted small">
+                <i class="bi bi-geo-alt-fill text-danger"></i> Buka Setiap Hari
               </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5 text-center">
+            <div class="mb-3">
+              <img src="gambar/logoToko.png" alt="Logo Kayla Aletha Mart" class="img-fluid rounded-4 shadow-sm"
+                style="max-height: 250px; object-fit: contain;">
+            </div>
+            <div>
+              <a href="https://maps.app.goo.gl/v81JwgmDFu1YUC8Q7" target="_blank">
+                <img src="gambar/lokasi.png" alt="Lokasi Kayla Aletha Mart"
+                  class="img-fluid rounded-4 shadow-sm border border-white border-3"
+                  style="max-height: 180px; width: 100%; object-fit: cover;">
+              </a>
 
             </div>
-            <!-- / Banner Blocks -->
-              
           </div>
+
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>

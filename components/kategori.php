@@ -1,10 +1,10 @@
-<section class="py-5 overflow-hidden">
+<section id="kategori" class="py-5 overflow-hidden">
   <div class="container-lg">
     <div class="row">
       <div class="col-md-12">
 
         <div class="section-header d-flex flex-wrap justify-content-between mb-5">
-          <h2 class="section-title">Category</h2>
+          <h2 class="section-title">Kategori</h2>
 
           <div class="d-flex align-items-center">
             <div class="swiper-buttons">
@@ -45,7 +45,7 @@
               <img src="gambar/mandi.png" class="rounded-circle" alt="Perlengkapan Mandi">
               <h4 class="fs-6 mt-3 fw-normal category-title">Perlengkapan Mandi</h4>
             </a>
-            
+
 
           </div>
         </div>
