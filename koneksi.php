@@ -15,5 +15,4 @@ if ($db->connect_error) {
 
 //supaya karakter khusus (huruf beraksen, emoji) tersimpan dan tampil dengan benar
 $db->set_charset("utf8mb4");
-
 ?>
