@@ -30,9 +30,9 @@
 </head>
 
 <body>
-  <class class="home-hero">
+  <div class="home-hero">
     <h1>Selamat Datang, <br> Kayla Aletha</h1>
-  </class>
+</div>
 </body>
 
 </html>

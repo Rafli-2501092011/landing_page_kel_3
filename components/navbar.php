@@ -19,7 +19,8 @@
             <input type="hidden" name="landing_page_kel_3" value="index">
 
             <div class="input-group">
-              <input name="kata" class="form-control" type="search" placeholder="Cari..." aria-label="Search" />
+              <input name="kata" class="form-control" type="search" placeholder="Cari..." aria-label="Search"
+                value="<?= htmlspecialchars($_GET['kata'] ?? '') ?>" />
               <button name="cari" value="Cari" class="btn btn-outline-dark" type="submit" aria-label="Cari">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
                   <path fill="currentColor"

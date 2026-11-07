@@ -1,5 +1,7 @@
 <?php
-// Urutan dan nama harus sama dengan kolom `kategori` di database
+// Ambil kata kunci pencarian
+$keyword = isset($_GET['kata']) ? trim($_GET['kata']) : '';
+
 $daftarKategori = [
   'Makanan Instan',
   'Minuman',
@@ -9,14 +11,34 @@ $daftarKategori = [
   'Perlengkapan Mandi',
 ];
 
+$foundMatchCategory = '';
+
 foreach ($daftarKategori as $kategori):
   $slug = strtolower(trim(preg_replace('/[^a-z0-9]+/i', '-', $kategori), '-'));
 
+  // Ambil semua produk per kategori tanpa menghilangkan kategori lain
   $stmt = mysqli_prepare($db, "SELECT * FROM barang WHERE kategori = ?");
   mysqli_stmt_bind_param($stmt, "s", $kategori);
   mysqli_stmt_execute($stmt);
   $hasil = mysqli_stmt_get_result($stmt);
+
+  // Cek apakah ada barang di kategori ini yang cocok dengan pencarian untuk target scroll
+  $isMatch = false;
+  if (!empty($keyword)) {
+    while($rowMatch = mysqli_fetch_assoc($hasil)) {
+      if (stripos($rowMatch['nama'], $keyword) !== false || stripos($rowMatch['kategori'], $keyword) !== false) {
+        $isMatch = true;
+        break;
+      }
+    }
+    mysqli_data_seek($hasil, 0);
+    
+    if ($isMatch && empty($foundMatchCategory)) {
+      $foundMatchCategory = $slug;
+    }
+  }
   ?>
+
   <section id="all-produk">
     <section id="<?= $slug ?>" class="pb-5">
       <div class="container-lg">
@@ -30,7 +52,6 @@ foreach ($daftarKategori as $kategori):
               <button class="swiper-next category-carousel-next btn btn-yellow">❯</button>
             </div>
           </div>
-          
         </div>
 
         <?php if (mysqli_num_rows($hasil) === 0): ?>
@@ -73,3 +94,15 @@ foreach ($daftarKategori as $kategori):
     </section>
   </section>
 <?php endforeach; ?>
+
+<!-- Script JavaScript untuk otomatis mengarahkan (scroll) ke kategori yang cocok -->
+<?php if (!empty($foundMatchCategory)): ?>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const targetElement = document.getElementById('<?= $foundMatchCategory; ?>');
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  });
+</script>
+<?php endif; ?>

@@ -1,3 +1,14 @@
+<?php
+// Mengambil jumlah total barang dari tabel barang
+$query_jml = mysqli_query($db, "SELECT COUNT(*) as total FROM barang");
+$data_jml = mysqli_fetch_assoc($query_jml);
+$total_barang = $data_jml['total'] ?? 0;
+
+// Pastikan koneksi sudah disertakan ($db)
+$query = mysqli_query($db, "SELECT * FROM informasi_toko WHERE id = 1");
+$toko = mysqli_fetch_assoc($query);
+?>
+
 <section style="background-image: url('gambar/banner-1.jpg');background-repeat: no-repeat;background-size: cover;">
   <div class="container-lg">
     <div class="row">
@@ -6,7 +17,7 @@
           <span class="fw-bold text-primary">Kayla Aletha </span> Mart,
           <span class="fw-bold">Belanja Mudah</span>
         </h2>
-        <p class="fs-4">Kebutuhan harian lengkap, harga bersahabat.</p>
+        <p class="fs-4"><?= htmlspecialchars($toko['slogan']); ?></p>
         <div class="d-flex gap-3">
           <a href="#produk-terlaris" class="btn btn-primary text-uppercase fs-6 rounded-pill px-4 py-3 mt-3">Lihat
             Barang</a>
@@ -15,7 +26,7 @@
           <div class="col">
             <div class="row text-dark">
               <div class="col-auto">
-                <p class="fs-1 fw-bold lh-sm mb-0">50+</p>
+                <p class="fs-1 fw-bold lh-sm mb-0"><?= $total_barang; ?>+</p>
               </div>
               <div class="col">
                 <p class="text-uppercase lh-sm mb-0">Jenis Produk</p>

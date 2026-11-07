@@ -1,3 +1,9 @@
+<?php
+// Pastikan koneksi sudah disertakan ($db)
+$query = mysqli_query($db, "SELECT * FROM informasi_toko WHERE id = 1");
+$toko = mysqli_fetch_assoc($query);
+?>
+
 <section id="informasi-toko" class="pb-4 my-4">
   <div class="container-lg">
     <div class="pt-5 pb-5 px-4 rounded-5 shadow-sm" style="background-color: #FFF1D6;">
@@ -8,12 +14,7 @@
             <span class="badge bg-warning text-dark mb-2 px-3 py-2 rounded-pill fw-semibold">Tentang Kami</span>
             <h2 class="fw-bold mb-3" style="color: #333;">Kayla Aletha Mart</h2>
             <p class="text-secondary lh-lg mb-4">
-              Kayla Aletha Mart adalah minimarket modern yang hadir untuk memenuhi seluruh kebutuhan harian Anda dan
-              keluarga.
-              Kami menyediakan beragam produk segar, makanan, minuman, hingga perlengkapan rumah tangga dengan harga
-              terjangkau,
-              tempat yang bersih, dan pelayanan yang ramah. Belanja cepat, nyaman, dan hemat kini semakin mudah di Kayla
-              Aletha Mart.
+              <?= htmlspecialchars($toko['deskripsi']); ?>
             </p>
 
             <div class="d-flex gap-3 align-items-center">
@@ -26,12 +27,12 @@
 
           <div class="col-lg-5 text-center">
             <div class="mb-3">
-              <img src="gambar/logoToko.png" alt="Logo Kayla Aletha Mart" class="img-fluid rounded-4 shadow-sm"
+              <img src="gambar/<?= htmlspecialchars($toko['logo']); ?>" alt="Logo Kayla Aletha Mart" class="img-fluid rounded-4 shadow-sm"
                 style="max-height: 250px; object-fit: contain;">
             </div>
             <div>
-              <a href="https://maps.app.goo.gl/v81JwgmDFu1YUC8Q7" target="_blank">
-                <img src="gambar/lokasi.png" alt="Lokasi Kayla Aletha Mart"
+              <a href="<?= htmlspecialchars($toko['maps_url']); ?>" target="_blank">
+                <img src="gambar/<?= htmlspecialchars($toko['lokasi_img']); ?>" alt="Lokasi Kayla Aletha Mart"
                   class="img-fluid rounded-4 shadow-sm border border-white border-3"
                   style="max-height: 180px; width: 100%; object-fit: cover;">
               </a>

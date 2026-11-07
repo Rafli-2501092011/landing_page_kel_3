@@ -10,3 +10,5 @@ if (!in_array($page, $allowed)) {
 include "layout/$page.php";
 
 require 'layout/layoutFooter.php';
+
+?>
