@@ -31,7 +31,7 @@
             <a class="nav-link" style="color: black" href="index.php?landing_page_kel_3=informasi_toko/informasi">Informasi</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" style="color: black" href="#../index.php?">Landing Page</a>
+            <a class="nav-link" style="color: black" href="../index.php?">Landing Page</a>
           </li>
 
 

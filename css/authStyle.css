@@ -963,18 +963,20 @@ html[data-theme="dark"] .profile-button .avatar-sm {
 
 .auth-visual {
   margin-bottom: 1rem;
-  height: 96px;
+  width: 100%;
+  height: auto; /* Membiarkan tinggi menyesuaikan otomatis dengan lebar dan proporsi gambar */
   border: 1px solid var(--admin-border);
   border-radius: 8px;
   overflow: hidden;
+  background-color: #fff;
+  padding: 10px; /* Opsional: memberi jarak sikit di dalam kotak */
 }
 
 .auth-visual img {
   width: 100%;
-  height: 100%;
+  height: auto;
   display: block;
-  object-fit: cover;
-  object-position: center;
+  object-fit: contain;
 }
 
 .error-card {
