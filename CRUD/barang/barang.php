@@ -5,8 +5,8 @@ $data = mysqli_query($db, "SELECT * FROM barang");
 
 <div class="container">
     <h1>Kelola Barang Toko</h1>
-    <di class="col">
-        <a href="index.php?landing_page_kel_3=barang/tambah" class="btn btn-success mb-2">+ Tambah Barang</a>
+    <div class="col">
+        <a href="index.php?landing_page_kel_3=barang/tambah" class="btn btn-info mb-2">+ Tambah Barang</a>
     </di>
 
 
@@ -24,7 +24,7 @@ $data = mysqli_query($db, "SELECT * FROM barang");
         while ($row = mysqli_fetch_assoc($data)) { ?>
             <tr>
                 <td><?= $no++ ?></td>
-                <td><img src="uploads/<?= $row['gambar'] ?>" width="60"></td>
+                <td><img src="../gambar/<?= $row['gambar'] ?>" width="100px" ></td>
                 <td><?= $row['nama'] ?></td>
                 <td><?= $row['kategori'] ?></td>
                 <td><?= $row['harga'] ?></td>
@@ -38,6 +38,3 @@ $data = mysqli_query($db, "SELECT * FROM barang");
         <?php } ?>
     </table>
 </div>
-<!-- <h1>Kelola Barang Toko</h1>
-<a href="tambah.php">+ Tambah Barang</a>
-<br><br> -->

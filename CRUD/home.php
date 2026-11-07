@@ -31,7 +31,7 @@
 
 <body>
   <class class="home-hero">
-    <h1>Selamat Datang</h1>
+    <h1>Selamat Datang, <br> Kayla Aletha</h1>
   </class>
 </body>
 

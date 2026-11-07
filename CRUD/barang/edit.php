@@ -1,4 +1,3 @@
-
 <?php
 require '../koneksi.php';
 
@@ -7,6 +6,8 @@ $data = mysqli_fetch_assoc(mysqli_query($db, "SELECT * FROM barang WHERE id = '$
 
 ?>
 <form action="proses/prosesBarang.php" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="id" value="<?= $data['id'] ?>">
+
 
     <div class="class container">
 
@@ -54,7 +55,7 @@ $data = mysqli_fetch_assoc(mysqli_query($db, "SELECT * FROM barang WHERE id = '$
                 </div>
             </div>
 
-            <button class="btn btn-primary" type="submit" name="update" value="update">Update</button>
+            <button class="btn btn-primary" type="submit" name="ubah" value="ubah">Update</button>
 
         </div>
     </div>

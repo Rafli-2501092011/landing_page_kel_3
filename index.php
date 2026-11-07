@@ -7,6 +7,6 @@ $allowed = ['home'];              // tambah nama halaman lain di sini
 if (!in_array($page, $allowed)) {
     $page = 'home';
 }
-include "$page.php";
+include "layout/$page.php";
 
 require 'layout/layoutFooter.php';

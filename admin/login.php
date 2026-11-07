@@ -8,7 +8,7 @@ if (isset($_POST['submit'])) {
 
   if ($cek > 0) {
     $_SESSION['username'] = $username;
-    header("Location: ../index.php");
+    header("Location: ../CRUD/index.php");
     exit;
   } else {
     echo "<script>
