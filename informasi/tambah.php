@@ -7,8 +7,8 @@ if (isset($_POST['simpan'])) {
     $isi      = $_POST['isi'];
     $tanggal  = $_POST['tanggal_berlaku'];
 
-    mysqli_query($conn, "INSERT INTO informasi (judul, kategori, isi, tanggal_berlaku) VALUES ('$judul', '$kategori', '$isi', '$tanggal')");
-    header("Location: index.php");
+    mysqli_query($db, "INSERT INTO informasi (judul, kategori, isi, tanggal_berlaku) VALUES ('$judul', '$kategori', '$isi', '$tanggal')");
+    header("Location: informasi.php");
 }
 ?>
 <h1>Tambah Informasi</h1>
@@ -27,5 +27,5 @@ if (isset($_POST['simpan'])) {
     <input type="date" name="tanggal_berlaku" required><br><br>
 
     <button type="submit" name="simpan">Simpan</button>
-    <a href="index.php">Batal</a>
+    <a href="informasi.php">Batal</a>
 </form>

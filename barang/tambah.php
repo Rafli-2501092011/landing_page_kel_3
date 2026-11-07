@@ -10,8 +10,8 @@ if (isset($_POST['simpan'])) {
     $gambar = $_FILES['gambar']['name'];
     move_uploaded_file($_FILES['gambar']['tmp_name'], "uploads/" . $gambar);
 
-    mysqli_query($conn, "INSERT INTO barang (nama, gambar, harga, rating, kategori) VALUES ('$nama', '$gambar', '$harga', '$rating', '$kategori')");
-    header("Location: index.php");
+    mysqli_query($db, "INSERT INTO barang (nama, gambar, harga, rating, kategori) VALUES ('$nama', '$gambar', '$harga', '$rating', '$kategori')");
+    header("Location: barang.php");
 }
 ?>
 <h1>Tambah Barang</h1>
@@ -33,5 +33,5 @@ if (isset($_POST['simpan'])) {
     <input type="file" name="gambar" required><br><br>
 
     <button type="submit" name="simpan">Simpan</button>
-    <a href="index.php">Batal</a>
+    <a href="barang.php">Batal</a>
 </form>

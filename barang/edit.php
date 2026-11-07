@@ -2,7 +2,7 @@
 include "../koneksi.php";
 
 $id   = $_GET['id'];
-$data = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM barang WHERE id = '$id'"));
+$data = mysqli_fetch_assoc(mysqli_query($db, "SELECT * FROM barang WHERE id = '$id'"));
 
 if (isset($_POST['simpan'])) {
     $nama     = $_POST['nama'];
@@ -16,8 +16,8 @@ if (isset($_POST['simpan'])) {
         move_uploaded_file($_FILES['gambar']['tmp_name'], "uploads/" . $gambar);
     }
 
-    mysqli_query($conn, "UPDATE barang SET nama='$nama', gambar='$gambar', harga='$harga', rating='$rating', kategori='$kategori' WHERE id='$id'");
-    header("Location: index.php");
+    mysqli_query($db, "UPDATE barang SET nama='$nama', gambar='$gambar', harga='$harga', rating='$rating', kategori='$kategori' WHERE id='$id'");
+    header("Location: barang.php");
 }
 ?>
 <h1>Edit Barang</h1>
@@ -40,5 +40,5 @@ if (isset($_POST['simpan'])) {
     <input type="file" name="gambar"><br><br>
 
     <button type="submit" name="simpan">Simpan</button>
-    <a href="index.php">Batal</a>
+    <a href="barang.php">Batal</a>
 </form>

@@ -1,6 +1,6 @@
 <?php
 include "../koneksi.php";
-$data = mysqli_query($conn, "SELECT * FROM barang");
+$data = mysqli_query($db, "SELECT * FROM barang");
 ?>
 <h1>Kelola Barang Toko</h1>
 <a href="tambah.php">+ Tambah Barang</a>
