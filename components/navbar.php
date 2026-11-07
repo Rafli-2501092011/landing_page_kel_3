@@ -71,7 +71,7 @@
       <div class="col-sm-8 col-lg-2 d-flex gap-5 align-items-center justify-content-center justify-content-sm-end">
         <ul class="d-flex justify-content-end list-unstyled m-0">
           <li>
-            <a href="index.php?page=admin/login" class="p-2 mx-1">
+            <a href="admin/login.php" class="p-2 mx-1">
               <svg width="27" height="27">
                 <use xlink:href="#user"></use>
               </svg>

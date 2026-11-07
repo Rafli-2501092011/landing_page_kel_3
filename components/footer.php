@@ -44,7 +44,6 @@
             <li class="menu-item">Jl. Raya Indarung No.25, Indarung, Kec. Lubuk Kilangan, Kota Padang, Sumatera Barat 25168, Indonesia</li>
             <li class="menu-item"><a href="https://wa.me/6281276535870" class="nav-link">WhatsApp:
                 0812-7653-5870</a></li>
-            <li class="menu-item"><a href="mailto:[email]" class="nav-link">[email]</a></li>
           </ul>
         </div>
       </div>
