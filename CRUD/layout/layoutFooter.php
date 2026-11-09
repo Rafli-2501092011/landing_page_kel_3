@@ -1,0 +1,3 @@
+    <script src="../bootstrap.js"></script>
+  </body>
+</html>

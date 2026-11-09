@@ -1,0 +1,47 @@
+<section id="banner-informasi" class="py-3">
+  <div class="container-lg">
+    <div class="row">
+      <div class="col-md-12">
+
+        <div class="banner-blocks">
+
+          <div class="banner-ad d-flex align-items-center large bg-info block-1"
+            style="background: url('gambar/banner-ad-1.jpg') no-repeat; background-size: cover;">
+            <div class="banner-content p-5">
+              <div class="content-wrapper text-light">
+                <h3 class="banner-title text-light">Etalase Digital Toko</h3>
+                <p>Pusat informasi daftar barang dan profil toko secara online.</p>
+                <a href="#all-produk" class="btn-link text-white">LIHAT PRODUK</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="banner-ad bg-success-subtle block-2"
+            style="background:url('gambar/banner-ad-2.jpg') no-repeat;background-size: cover">
+            <div class="banner-content align-items-center p-5">
+              <div class="content-wrapper text-light">
+                <h3 class="banner-title text-light">Informasi Toko</h3>
+                <p>Kenali profil dan informasi lengkap toko kami di sini.</p>
+                <a href="#informasi-toko" class="btn-link text-white">TENTANG KAMI</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="banner-ad bg-danger block-3"
+            style="background:url('gambar/banner-ad-3.jpg') no-repeat;background-size: cover">
+            <div class="banner-content align-items-center p-5">
+              <div class="content-wrapper text-light">
+                <h3 class="banner-title text-light">Produk Berkualitas (atau Pilihan Terbaik)</h3>
+                <p>Berbagai pilihan barang terbaik yang siap Anda cek kapan saja.</p>
+                <a href="#produk-terlaris" class="btn-link text-white">LIHAT PRODUK</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- / Banner Blocks -->
+
+      </div>
+    </div>
+  </div>
+</section>
