@@ -46,12 +46,12 @@ foreach ($daftarKategori as $kategori):
         <div class="section-header d-flex flex-wrap justify-content-between my-4">
           <h2 class="section-title"><?= htmlspecialchars($kategori) ?></h2>
 
-          <div class="d-flex align-items-center">
+          <!-- <div class="d-flex align-items-center">
             <div class="swiper-buttons">
               <button class="swiper-prev category-carousel-prev btn btn-yellow">❮</button>
               <button class="swiper-next category-carousel-next btn btn-yellow">❯</button>
             </div>
-          </div>
+          </div> -->
         </div>
 
         <?php if (mysqli_num_rows($hasil) === 0): ?>

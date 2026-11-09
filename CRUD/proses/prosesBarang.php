@@ -1,4 +1,4 @@
-            <!-- proses input data barang -->
+<!-- proses input data barang -->
 
 <?php
 include "../../koneksi.php";
@@ -15,39 +15,55 @@ if (isset($_POST['simpan'])) {
   $nama_file = $gambar['name'];
   move_uploaded_file($gambar['tmp_name'], '../../gambar/' . $nama_file);
 
-  //deklarasi variabel
-  $sql = "INSERT INTO barang (nama, gambar, harga, rating, kategori)
-          Values (?, ?, ?, ?, ?)";
-  //eksekusi query sql ke database
-  $query = $db->prepare($sql);
-  $query->bind_param("ssids", $nama, $nama_file, $harga, $rating, $kategori);
+  $cek = $db->prepare("SELECT nama FROM barang WHERE nama = ?");
+  $cek->bind_param("s", $nama);
+  $cek->execute();
+  $cek->store_result();
 
-
-
-  //kondisi
-  if ($query->execute()) {
+  if ($cek->num_rows > 0) {
+    $kode = htmlspecialchars($nama);
     echo "<script>
-                alert('Berhasil menambah data!');
+                alert('Kode buku $kode sudah terdaftar. Gunakan kode lain.');
                 window.location='../index.php?landing_page_kel_3=barang/barang';
               </script>";
   } else {
-    echo "<script>
+    //deklarasi variabel
+    $sql = "INSERT INTO barang (nama, gambar, harga, rating, kategori)
+          Values (?, ?, ?, ?, ?)";
+    //eksekusi query sql ke database
+    $query = $db->prepare($sql);
+    $query->bind_param("ssids", $nama, $nama_file, $harga, $rating, $kategori);
+
+
+
+    //kondisi
+    if ($query->execute()) {
+      echo "<script>
+                alert('Berhasil menambah data!');
+                window.location='../index.php?landing_page_kel_3=barang/barang';
+              </script>";
+    } else {
+      echo "<script>
                 alert('Gagal menambah data!');
                 window.location='../index.php?landing_page_kel_3=barang/barang';
               </script>" . mysqli_error($db);
+    }
   }
+
 }
 ?>
 
 
-                <!-- proses update data barang -->
+<!-- proses update data barang -->
 
 <?php
 require '../../koneksi.php';
 
-function hapusFileGambar($db, $nama_file, $kecuali_id) {
+function hapusFileGambar($db, $nama_file, $kecuali_id)
+{
   $nama_file = basename($nama_file);
-  if ($nama_file === '') return;
+  if ($nama_file === '')
+    return;
 
   // jangan hapus kalau masih dipakai barang lain
   $cek = $db->prepare("SELECT COUNT(*) FROM barang WHERE gambar = ? AND id <> ?");
