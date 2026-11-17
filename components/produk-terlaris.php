@@ -1,4 +1,5 @@
 <?php
+$keyword = isset($_GET['kata']) ? trim($_GET['kata']) : '';
 
 $stmt = mysqli_prepare($db, "SELECT * FROM barang ORDER BY rating DESC LIMIT 10");
 mysqli_stmt_execute($stmt);
@@ -21,15 +22,29 @@ $hasil = mysqli_stmt_get_result($stmt);
     <?php endif; ?>
 
     <div class="row row-cols-2 row-cols-md-4 row-cols-lg-5 g-3">
-      <?php while ($b = mysqli_fetch_assoc($hasil)): ?>
+      <?php while ($b = mysqli_fetch_assoc($hasil)):
+        $isProductMatch = false;
+        $namaProduk = htmlspecialchars($b['nama']);
+
+        if (!empty($keyword)) {
+          if (stripos($b['nama'], $keyword) !== false || stripos($b['kategori'], $keyword) !== false) {
+            $isProductMatch = true;
+            $esc = preg_quote(htmlspecialchars($keyword), '/');
+            $namaProduk = preg_replace('/(' . $esc . ')/i', '<mark class="search-highlight">$1</mark>', $namaProduk);
+          }
+        }
+      ?>
         <div class="col">
-          <div class="product-item">
+          <div class="product-item <?= $isProductMatch ? 'is-match search-match-item' : '' ?>">
+            <?php if ($isProductMatch): ?>
+              <span class="search-match-badge">Ditemukan</span>
+            <?php endif; ?>
             <figure>
               <img src="gambar/<?= htmlspecialchars($b['gambar']) ?>" alt="<?= htmlspecialchars($b['nama']) ?>"
                 class="tab-image">
             </figure>
             <div class="d-flex flex-column text-center">
-              <h3 class="fs-6 fw-normal"><?= htmlspecialchars($b['nama']) ?></h3>
+              <h3 class="fs-6 fw-normal"><?= $namaProduk ?></h3>
               <div>
                 <span class="rating">
                   <?php for ($i = 1; $i <= 5; $i++):
