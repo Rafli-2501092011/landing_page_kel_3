@@ -1,4 +1,3 @@
-<!-- ini pakai konsep oop/pbo -->
 <?php
 
 // mulai session (dipakai untuk menyimpan pesan setalah redirect)
