@@ -21,6 +21,9 @@
             <div class="input-group">
               <input name="kata" class="form-control" type="search" placeholder="Cari..." aria-label="Search"
                 value="<?= htmlspecialchars($_GET['kata'] ?? '') ?>" />
+              <?php if (!empty($_GET['kata'])): ?>
+                <a href="index.php" class="btn btn-outline-secondary" title="Reset Pencarian">✕</a>
+              <?php endif; ?>
               <button name="cari" value="Cari" class="btn btn-outline-dark" type="submit" aria-label="Cari">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
                   <path fill="currentColor"
