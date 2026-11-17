@@ -23,7 +23,7 @@ if (isset($_POST['simpan'])) {
   if ($cek->num_rows > 0) {
     $kode = htmlspecialchars($nama);
     echo "<script>
-                alert('Kode buku $kode sudah terdaftar. Gunakan kode lain.');
+                alert('$kode sudah terdaftar. Masukan barang lain.');
                 window.location='../index.php?landing_page_kel_3=barang/barang';
               </script>";
   } else {
@@ -39,12 +39,12 @@ if (isset($_POST['simpan'])) {
     //kondisi
     if ($query->execute()) {
       echo "<script>
-                alert('Berhasil menambah data!');
+                alert('Berhasil menambah data barang.');
                 window.location='../index.php?landing_page_kel_3=barang/barang';
               </script>";
     } else {
       echo "<script>
-                alert('Gagal menambah data!');
+                alert('Gagal menambah data barang!');
                 window.location='../index.php?landing_page_kel_3=barang/barang';
               </script>" . mysqli_error($db);
     }
@@ -132,12 +132,12 @@ if (isset($_POST['ubah'])) {
     }
 
     echo "<script>
-                alert('Berhasil merubah data!');
+                alert('Berhasil merubah data barang.');
                 window.location='../index.php?landing_page_kel_3=barang/barang';
               </script>";
   } else {
     echo "<script>
-                alert('Gagal merubah data!');
+                alert('Gagal merubah data barang!');
                 window.location='../index.php?landing_page_kel_3=barang/barang';
               </script>" . mysqli_error($db);
   }

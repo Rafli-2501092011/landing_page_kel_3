@@ -52,7 +52,7 @@ if (isset($_GET['id'])) {
     }
 
     echo "<script>
-                alert('Berhasil hapus data!');
+                alert('Berhasil hapus data.');
                 window.location='index.php?landing_page_kel_3=informasi_toko/informasi';
               </script>";
   } else {

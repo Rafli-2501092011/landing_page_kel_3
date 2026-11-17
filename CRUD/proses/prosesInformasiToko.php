@@ -37,7 +37,7 @@ if (isset($_POST['simpan'])) {
   // Kondisi pengecekan hasil eksekusi
   if ($query->execute()) {
     echo "<script>
-            alert('Berhasil menambah informasi toko!');
+            alert('Berhasil menambah informasi toko.');
             window.location='../index.php?landing_page_kel_3=informasi_toko/informasi';
           </script>";
   } else {
@@ -132,7 +132,7 @@ if (isset($_POST['ubah'])) {
     }
 
     echo "<script>
-            alert('Berhasil merubah informasi toko!');
+            alert('Berhasil merubah informasi toko.');
             window.location='../index.php?landing_page_kel_3=informasi_toko/informasi';
           </script>";
   } else {
